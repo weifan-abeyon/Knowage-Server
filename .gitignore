@@ -97,3 +97,9 @@ Knowage-R/.RData
 Knowage-Python/src/hmackey
 
 knowagecockpitengine/src/main/webapp/WEB-INF/jsp/commons/angular/angularResource.jsp
+
+# avoid checking in package-lock.json
+package-lock.json
+
+# no tomcat stuff
+apache-tomcat-10.0.23/

@@ -61,7 +61,12 @@
 			<id>bidlink</id>
 			<url>http://repo.bidlink.cn/nexus/content/repositories/</url>
 		</repository>
-		
+
+		<!-- a default repo -->
+		<repository>
+			<id>maven-default</id>
+			<url>https://repo.maven.apache.org/maven2/</url>
+		</repository>
 		
 	</repositories>
   
@@ -118,16 +123,16 @@
 		<module>../knowagemeta</module>
 		<module>../knowageqbeengine</module>
 		<module>../knowagesvgviewerengine</module>
-		<module>../knowagetalendenginclientapi</module>
-		<module>../knowagetalendengine</module>
+<!--		<module>../knowagetalendenginclientapi</module>-->
+<!--		<module>../knowagetalendengine</module>-->
 		<module>../knowagewhatifengine</module>
-		<module>../knowagejasperreportengine</module>
-		<module>../spagobi.birt.oda</module>
-		<module>../knowagebirtreportengine</module>
+<!--		<module>../knowagejasperreportengine</module>-->
+<!--		<module>../spagobi.birt.oda</module>-->
+<!--		<module>../knowagebirtreportengine</module>-->
 		<module>../knowagedatabasescripts</module>
 		<module>../knowage-api</module>
-		<module>../knowage-vue</module>
-		<module>../knowage-spring-boot-api-common</module>
+<!--		<module>../knowage-vue</module>-->
+<!--		<module>../knowage-spring-boot-api-common</module>-->
 	</modules>
 
 	<build>

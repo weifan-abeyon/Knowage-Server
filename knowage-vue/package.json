@@ -8,7 +8,7 @@
         "coverage": "vitest run --coverage",
         "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
         "dev": "vite",
-        "build": "vite build",
+        "build": "node --max_old_space_size=2048 ./node_modules/vite/bin/vite.js",
         "serve": "vite preview"
     },
     "main": "main.ts",

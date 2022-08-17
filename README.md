@@ -1,3 +1,27 @@
+
+# Abeyon fork of KNOWAGE 
+
+## Developer Notes 
+
+### Manual fixes for building the artifact(s) 
+
+* Many `http` repos are used in this codebase. However, starting from maven 3.8.1, `http` repos are blocked. To enable accessing to `http`, remove the following `<mirror>` in `conf/settings.xml` of your maven: 
+    ```XML
+    <mirror>
+        <id>maven-default-http-blocker</id>
+        <mirrorOf>external:http:*</mirrorOf>
+        <name>Pseudo repository to mirror external repositories initially using HTTP.</name>
+        <url>http://0.0.0.0/</url>
+        <blocked>true</blocked>
+    </mirror>
+    ```
+
+* For `knowage-vue`, the original "build" command given in `package.json` was `vite build`. Change it to `node --max_old_space_size=2048 ./node_modules/vite/bin/vite.js` to address the out-of-heap-memory issue. 
+
+
+<hr>
+<hr> 
+
 <p align="center">
 <img src="https://www.knowage-suite.com/site/wp-content/uploads/2016/03/KNOWAGE_logo_color.png">
 </p>
@@ -104,6 +128,7 @@ To build KNOWAGE you need:
 - JDK 8
 - [Maven 3](https://maven.apache.org/)
 - [NodeJS 8 or greater](https://nodejs.org/)
+- grunt (`npm install -g grunt-cli`)
 
 N.B.: You need to add the paths containing your ``java``, ``node`` and ``npm`` commands to your ``PATH`` environment variable: see the official documentation of your operating system.
 
