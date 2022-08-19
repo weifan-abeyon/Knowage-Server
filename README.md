@@ -3,9 +3,14 @@
 
 ## Developer Notes 
 
-### Manual fixes for building the artifact(s) 
+### Manually building the artifact(s)
 
-* Many `http` repos are used in this codebase. However, starting from maven 3.8.1, `http` repos are blocked. To enable accessing to `http`, remove the following `<mirror>` in `conf/settings.xml` of your maven: 
+* **Prerequisites.** 
+    - A local MySQL instance for saving **Knowage**'s metadata. Here are the assumed configurations of the MySQL:
+        - A user of username `abeyon` and password `abeyon` 
+        - A database called `knowage_ce`. Initialize database `knowage_ce` with script `knowagedatabasescripts/mysql/MySQL_create.sql`
+
+* **Maven.** Many `http` repos are used in this codebase. However, starting from maven 3.8.1, `http` repos are blocked. To enable accessing to `http`, remove the following `<mirror>` in `conf/settings.xml` of your maven: 
     ```XML
     <mirror>
         <id>maven-default-http-blocker</id>
@@ -16,7 +21,10 @@
     </mirror>
     ```
 
-* For `knowage-vue`, the original "build" command given in `package.json` was `vite build`. Change it to `node --max_old_space_size=4096 ./node_modules/vite/bin/vite.js build` to address the out-of-heap-memory issue. 
+* **Codebase.** For `knowage-vue`, the original "build" command given in `package.json` was `vite build`. Change it to `node --max_old_space_size=4096 ./node_modules/vite/bin/vite.js build` to address the out-of-heap-memory issue.
+
+* **(Boundled) Tomcat-7.** 
+    - **server.xml**   
 
 
 <hr>
