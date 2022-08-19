@@ -16,7 +16,7 @@
     </mirror>
     ```
 
-* For `knowage-vue`, the original "build" command given in `package.json` was `vite build`. Change it to `node --max_old_space_size=2048 ./node_modules/vite/bin/vite.js` to address the out-of-heap-memory issue. 
+* For `knowage-vue`, the original "build" command given in `package.json` was `vite build`. Change it to `node --max_old_space_size=4096 ./node_modules/vite/bin/vite.js build` to address the out-of-heap-memory issue. 
 
 
 <hr>
