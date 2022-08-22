@@ -41,6 +41,8 @@ public abstract class DataBaseFactory {
 				DatabaseDialect sqlDialect = DatabaseDialect.get(dialect);
 				Assert.assertNotNull(sqlDialect, "Impossible to find a database implementation for dialect [" + dialect + "]");
 				switch (sqlDialect) {
+				case SQL_ANYWHERE:
+					return new SQLAnywhereDataBase(dataSource);
 				case HIVE:
 					return new HiveDataBase(dataSource);
 				case HIVE2:

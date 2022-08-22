@@ -8,7 +8,7 @@
 * **Prerequisites.** 
     - A local MySQL instance for saving **Knowage**'s metadata. Here are the assumed configurations of the MySQL:
         - A user of username `abeyon` and password `abeyon` 
-        - A database called `knowage_ce`. Initialize database `knowage_ce` with script `knowagedatabasescripts/mysql/MySQL_create.sql`
+        - A database called `knowage_ce`. Initialize database `knowage_ce` with scripts `knowagedatabasescripts/mysql/MySQL_create.sql` and `knowagedatabasescripts/mysql/MySQL_create.sql`
 
 * **Maven.** Many `http` repos are used in this codebase. However, starting from maven 3.8.1, `http` repos are blocked. To enable accessing to `http`, remove the following `<mirror>` in `conf/settings.xml` of your maven: 
     ```XML

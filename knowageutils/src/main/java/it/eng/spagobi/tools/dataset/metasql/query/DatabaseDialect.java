@@ -28,6 +28,7 @@ import it.eng.spagobi.utilities.assertion.Assert;
 public enum DatabaseDialect {
 
 	// @formatter:off
+	SQL_ANYWHERE("SQLAnywhere", "org.hibernate.dialect.SybaseASE15Dialect", true, false, false, false),
 	HIVE("Apache Hive v1", "hive", true, false, false, true),
 	HIVE2("Apache Hive v2", "org.hibernate.dialect.Hive2Dialect", true, false, false, true),
 	MONGO("MongoDB", "MongoDialect", false, false, false, false),
