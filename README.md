@@ -5,11 +5,6 @@
 
 ### Manually building the artifact(s)
 
-* **Prerequisites.** 
-    - A local MySQL instance for saving **Knowage**'s metadata. Here are the assumed configurations of the MySQL:
-        - A user of username `abeyon` and password `abeyon` 
-        - A database called `knowage_ce`. Initialize database `knowage_ce` with scripts `knowagedatabasescripts/mysql/MySQL_create.sql` and `knowagedatabasescripts/mysql/MySQL_create.sql`
-
 * **Maven.** Many `http` repos are used in this codebase. However, starting from maven 3.8.1, `http` repos are blocked. To enable accessing to `http`, remove the following `<mirror>` in `conf/settings.xml` of your maven: 
     ```XML
     <mirror>
@@ -24,11 +19,17 @@
 * **Codebase.** For `knowage-vue`, the original "build" command given in `package.json` was `vite build`. Change it to `node --max_old_space_size=4096 ./node_modules/vite/bin/vite.js build` to address the out-of-heap-memory issue.
 
 * **(Boundled) Tomcat-7.** 
-    - **server.xml**   
+    - **Sybase DB JDBC driver.** Copy the Sybase DB JDBC driver to 
 
 
-<hr>
-<hr> 
+### Sybase DataSource Connection Setup 
+* URL: `jdbc:sybase:Tds:10.1.10.241:2638?ServiceName=PENG` 
+* Driver: `com.sybase.jdbc4.jdbc.SybDriver`
+
+
+<hr />
+<h3>The Following Contents are from the Original KNOWAGE README.md</h3>
+<hr/> 
 
 <p align="center">
 <img src="https://www.knowage-suite.com/site/wp-content/uploads/2016/03/KNOWAGE_logo_color.png">
