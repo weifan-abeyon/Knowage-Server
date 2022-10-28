@@ -55,7 +55,14 @@ class SessionData implements NewsListener, AsyncDownloadsListener {
 	public SessionData(Session session, EndpointConfig config) {
 		this.session = session;
 		this.httpSession = (HttpSession) config.getUserProperties().get("HTTP_SESSION");
+
+		System.out.println("httpSession is null? " + (this.httpSession == null));
+		System.out.println("session.toString(): " + session.toString());
+		System.out.println("IEngUserProfile.ENG_USER_PROFILE is null? " + (IEngUserProfile.ENG_USER_PROFILE == null));
+
 		this.userProfile = (UserProfile) httpSession.getAttribute(IEngUserProfile.ENG_USER_PROFILE);
+
+		System.out.println("userProfile is null? " + (userProfile == null));
 
 		this.tenantId = userProfile.getOrganization();
 		this.username = userProfile.getUserId().toString();

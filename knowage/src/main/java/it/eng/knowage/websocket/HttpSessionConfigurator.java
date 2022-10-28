@@ -36,6 +36,8 @@ public class HttpSessionConfigurator extends ServerEndpointConfig.Configurator {
 
 		Object httpSession = request.getHttpSession();
 
+		System.out.println("[HttpSessionConfiguration][0] " + (httpSession == null));
+
 		if (httpSession != null) {
 			sec.getUserProperties().remove("HTTP_SESSION");
 			sec.getUserProperties().put("HTTP_SESSION", httpSession);

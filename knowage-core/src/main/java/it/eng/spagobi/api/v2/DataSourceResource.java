@@ -170,6 +170,10 @@ public class DataSourceResource extends AbstractSpagoBIResource {
 				throw new SpagoBIRestServiceException(msgBuilder.getMessage("sbi.datasource.exists"), buildLocaleFromSession(), new Throwable());
 			}
 
+			System.out.println("[DataSourceResource][postDataSource][0] " + dataSource.toString());
+			System.out.println("[DataSourceResource][postDataSource][1] " + dataSourceDAO.toString());
+			System.out.println("[DataSourceResource][postDataSource][2] " + getUserProfile());
+
 			dataSourceDAO.insertDataSource(dataSource, getUserProfile().getOrganization());
 
 			IDataSource newLabel = dataSourceDAO.loadDataSourceByLabel(dataSource.getLabel());
